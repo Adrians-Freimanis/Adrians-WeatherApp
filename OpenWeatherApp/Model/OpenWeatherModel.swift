@@ -10,7 +10,7 @@ import Foundation
 class OpenWeatherModel{
     
     let apiUrl = "https://api.openweathermap.org/data/2.5/weather"
-    let apiId = "d065168e051110093ce5ad24cdd86f8a"
+    let apiId = "3aefd1bfce5e016593b79aa4d17b81a4"
     
     func updateWeatherIcon(condition: Int) -> String {
         switch (condition) {

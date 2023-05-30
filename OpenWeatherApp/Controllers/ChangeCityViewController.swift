@@ -32,5 +32,9 @@ class ChangeCityViewController: UIViewController {
         
     }
     
-
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
 }

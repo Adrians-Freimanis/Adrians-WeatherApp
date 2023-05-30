@@ -15,6 +15,10 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var cloudsLabel: UILabel!
+    
+    
     var openWeather: OpenWeather?
     let openWeatherModel = OpenWeatherModel()
     let locationManager = CLLocationManager()
@@ -68,6 +72,20 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
             })
         }else{
             self.cityLabel.text = "Weather Unavailible 😢"
+        }
+        
+        if let resultAdvancedWind = data.wind?.speed{
+            
+            windLabel.text = "Wind: \(Int(resultAdvancedWind))  knots"
+        }else{
+            self.windLabel.text = "Wind data unavailable"
+        }
+        
+        if let resultAdvancedClouds = data.clouds?.all{
+            
+            cloudsLabel.text = "Clouds: \(Int(resultAdvancedClouds)) %"
+        }else{
+            self.cloudsLabel.text = "Clouds data unavailable"
         }
     }//updateWeather
     
